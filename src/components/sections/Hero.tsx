@@ -31,8 +31,9 @@ export function Hero() {
             </span>
           </h1>
           <p className="max-w-2xl text-base text-zinc-400 sm:text-lg md:text-xl">
-            Passionate about building scalable, high-performance web applications
-            and exploring data-driven solutions with modern technologies.
+            Hi, I&apos;m Muhammad Faizan — a passionate Computer Science student who loves building,
+            learning, and exploring technology. I&apos;m always looking for new challenges and
+            opportunities to turn ideas into meaningful digital experiences.
           </p>
         </div>
 
@@ -82,7 +83,7 @@ export function Hero() {
 
           {/* LinkedIn Button */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/faizan523/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"

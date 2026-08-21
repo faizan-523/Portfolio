@@ -67,7 +67,7 @@ export function Navbar() {
             &lt;/&gt;
           </span>
           <span className="text-base font-bold tracking-tight text-zinc-100">
-            Faizan
+            Muhammad Faizan
           </span>
         </Link>
 

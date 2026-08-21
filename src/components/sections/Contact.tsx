@@ -46,7 +46,7 @@ export function Contact() {
             <div className="space-y-3 pt-2">
               {/* Email Link */}
               <a
-                href="mailto:placeholder@example.com"
+                href="mailto:faizan.7.ist@gmail.com"
                 className="flex items-center gap-3.5 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 text-zinc-300 backdrop-blur-sm transition-colors hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 text-sky-400">
@@ -56,7 +56,7 @@ export function Contact() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-medium text-zinc-500">Email</p>
-                  <p className="truncate text-sm font-medium text-zinc-200">placeholder@example.com</p>
+                  <p className="truncate text-sm font-medium text-zinc-200">faizan.7.ist@gmail.com</p>
                 </div>
               </a>
 
@@ -84,7 +84,7 @@ export function Contact() {
 
               {/* LinkedIn Link */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/faizan523/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3.5 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 text-zinc-300 backdrop-blur-sm transition-colors hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
@@ -96,7 +96,7 @@ export function Contact() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-medium text-zinc-500">LinkedIn</p>
-                  <p className="truncate text-sm font-medium text-zinc-200">linkedin.com</p>
+                  <p className="truncate text-sm font-medium text-zinc-200">linkedin.com/in/faizan523</p>
                 </div>
               </a>
             </div>

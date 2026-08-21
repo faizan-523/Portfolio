@@ -27,16 +27,14 @@ export function About() {
           {/* Main Introduction */}
           <div className="space-y-6 text-base leading-relaxed text-zinc-400 sm:text-lg lg:col-span-7">
             <p>
-              I am a Computer Science student with a strong passion for software
-              engineering, modern web development, and data science. I enjoy
-              building reliable web applications and exploring how data can be
-              leveraged to solve complex problems.
+              Hi, I&apos;m Muhammad Faizan &mdash; a passionate Computer Science student who loves
+              building, learning, and exploring technology. I&apos;m always looking for new
+              challenges and opportunities to turn ideas into meaningful digital experiences.
             </p>
             <p>
-              My primary focus revolves around building clean, responsive user
-              interfaces, writing efficient backend logic, and delving into data
-              analysis and machine learning techniques to derive meaningful
-              insights.
+              My focus spans modern web development, full-stack applications, data analysis,
+              and machine learning &mdash; building clean, responsive interfaces backed by
+              efficient logic and data-driven insights.
             </p>
           </div>
 
@@ -65,11 +63,8 @@ export function About() {
                   <h3 className="text-base font-semibold text-zinc-100">
                     BS in Computer Science
                   </h3>
-                  <p className="text-sm text-zinc-400">Undergraduate Degree</p>
-                  <p className="pt-2 text-xs text-zinc-500">
-                    Focus on software engineering, algorithms, database systems,
-                    and data analysis.
-                  </p>
+                  <p className="text-sm text-zinc-400">Institute of Space Technology</p>
+                  <p className="pt-2 text-xs text-zinc-500">2024 &ndash; Present</p>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ const EXPERIENCES: ExperienceItem[] = [
     id: "softezm-internship",
     role: "Web Development Intern",
     company: "Softezm",
-    period: "Internship",
+    period: "May 2026 – August 2026",
     description:
       "Contributed to web development projects utilizing modern web technologies, building clean user interfaces, and collaborating on responsive web solutions.",
     technologies: ["Web Development", "JavaScript", "React", "HTML/CSS", "Git"],

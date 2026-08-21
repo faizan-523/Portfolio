@@ -27,7 +27,7 @@ export function Footer() {
                 &lt;/&gt;
               </span>
               <span className="text-base font-bold tracking-tight text-zinc-100">
-                Faizan
+                Muhammad Faizan
               </span>
             </Link>
             <p className="text-xs text-zinc-500 max-w-xs">
@@ -72,7 +72,7 @@ export function Footer() {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/faizan523/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -85,7 +85,7 @@ export function Footer() {
 
             {/* Email */}
             <a
-              href="mailto:placeholder@example.com"
+              href="mailto:faizan.7.ist@gmail.com"
               aria-label="Email"
               className="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-400 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
             >
@@ -98,7 +98,7 @@ export function Footer() {
 
         {/* Bottom Copyright Row */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-zinc-800/60 pt-6 text-center text-xs text-zinc-500 sm:flex-row sm:text-left">
-          <p>© {currentYear} Faizan. All rights reserved.</p>
+          <p>© {currentYear} Muhammad Faizan. All rights reserved.</p>
           <p className="text-zinc-600">Built with Next.js &amp; Tailwind CSS</p>
         </div>
       </Container>

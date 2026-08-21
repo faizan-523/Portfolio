@@ -22,12 +22,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Faizan | Web Developer & Data Science Enthusiast",
-    template: "%s | Faizan",
+    default: "Muhammad Faizan | Digital Space",
+    template: "%s | Muhammad Faizan",
   },
   description:
-    "Portfolio of Faizan, a Computer Science student and developer specializing in modern web development, full-stack applications, data analysis, and machine learning.",
+    "Portfolio of Muhammad Faizan, a Computer Science student and developer specializing in modern web development, full-stack applications, data analysis, and machine learning.",
   keywords: [
+    "Muhammad Faizan",
     "Faizan",
     "Web Developer",
     "Data Science",
@@ -38,22 +39,22 @@ export const metadata: Metadata = {
     "Python",
     "Portfolio",
   ],
-  authors: [{ name: "Faizan" }],
-  creator: "Faizan",
+  authors: [{ name: "Muhammad Faizan" }],
+  creator: "Muhammad Faizan",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://github.com/faizan-523",
-    title: "Faizan | Web Developer & Data Science Enthusiast",
+    title: "Muhammad Faizan | Web Developer & Data Science Enthusiast",
     description:
-      "Explore web development projects, data science analyses, and machine learning models built by Faizan.",
-    siteName: "Faizan Portfolio",
+      "Explore web development projects, data science analyses, and machine learning models built by Muhammad Faizan.",
+    siteName: "Muhammad Faizan Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Faizan | Web Developer & Data Science Enthusiast",
+    title: "Muhammad Faizan | Web Developer & Data Science Enthusiast",
     description:
-      "Explore web development projects, data science analyses, and machine learning models built by Faizan.",
+      "Explore web development projects, data science analyses, and machine learning models built by Muhammad Faizan.",
   },
   robots: {
     index: true,
