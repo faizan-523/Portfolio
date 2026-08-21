@@ -98,7 +98,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
 
 export function Skills() {
   return (
-    <section id="skills" className="scroll-mt-16 border-t border-zinc-800/60 py-20 md:py-28">
+    <section id="skills" className="scroll-mt-20 border-t border-zinc-800/60 py-20 md:py-28">
       <Container className="space-y-12">
         {/* Section Header */}
         <div className="space-y-3">

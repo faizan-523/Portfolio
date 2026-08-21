@@ -27,7 +27,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on resize to desktop
+  // Close mobile menu on resize to desktop or on Escape key
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -35,29 +35,39 @@ export function Navbar() {
       }
     };
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         isScrolled
-          ? "border-b border-zinc-800/80 bg-zinc-950/80 shadow-sm backdrop-blur-md"
+          ? "border-b border-zinc-800/80 bg-zinc-950/85 shadow-sm shadow-black/40 backdrop-blur-md"
           : "border-b border-transparent bg-zinc-950/40 backdrop-blur-sm"
       }`}
     >
       <Container className="flex h-16 items-center justify-between">
-        {/* Logo / Name Placeholder */}
+        {/* Logo / Name Branding */}
         <Link
           href="/"
-          className="group flex items-center gap-2 font-mono text-sm font-semibold tracking-tight text-zinc-100 transition-colors hover:text-white"
+          className="group flex items-center gap-2 font-mono text-sm font-semibold tracking-tight text-zinc-100 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md"
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 text-xs font-bold text-zinc-200 group-hover:border-zinc-700">
             &lt;/&gt;
           </span>
           <span className="text-base font-bold tracking-tight text-zinc-100">
-            Portfolio
+            Faizan
           </span>
         </Link>
 
@@ -70,7 +80,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="rounded-md px-3 py-1.5 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-100"
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
             >
               {item.label}
             </Link>
@@ -84,7 +94,7 @@ export function Navbar() {
           aria-controls="mobile-menu"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsOpen((prev) => !prev)}
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/80 text-zinc-300 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-white md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/80 text-zinc-300 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 md:hidden"
         >
           {isOpen ? (
             <svg
@@ -131,7 +141,7 @@ export function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white"
+                  className="rounded-lg px-3 py-3 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
                 >
                   {item.label}
                 </Link>

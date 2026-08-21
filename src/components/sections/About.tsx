@@ -10,7 +10,7 @@ const LEARNING_TOPICS = [
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-16 border-t border-zinc-800/60 py-20 md:py-28">
+    <section id="about" className="scroll-mt-20 border-t border-zinc-800/60 py-20 md:py-28">
       <Container className="space-y-12">
         {/* Section Header */}
         <div className="space-y-3">

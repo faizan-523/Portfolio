@@ -59,7 +59,7 @@ export function Hero() {
 
           {/* GitHub Button */}
           <a
-            href="https://github.com"
+            href="https://github.com/faizan-523"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"

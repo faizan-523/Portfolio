@@ -2,33 +2,53 @@ import { Project } from "@/types";
 
 export const PROJECTS: Project[] = [
   {
-    id: "ecommerce-web-platform",
-    title: "E-Commerce Web Application",
+    id: "furniturelux",
+    title: "FurnitureLux",
     description:
-      "A modern, responsive full-stack e-commerce web platform featuring product filtering, cart management, and secure checkout simulation.",
+      "Full-stack furniture e-commerce platform with authentication, product management, cart functionality, and a modern responsive UI.",
     category: "Web Development",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    githubUrl: "https://github.com",
+    tags: ["Next.js", "React", "Tailwind CSS", "MongoDB", "Mongoose", "NextAuth"],
+    githubUrl: "https://github.com/faizan-523",
     liveUrl: "https://example.com",
   },
   {
-    id: "customer-churn-analysis",
-    title: "Customer Churn Data Analysis",
+    id: "chronicle-blog",
+    title: "Chronicle Blog",
     description:
-      "Exploratory data analysis and visualization pipeline uncovering behavioral trends, customer retention factors, and key risk indicators.",
+      "Full-stack blog platform with an admin dashboard, authentication, post management, and comments.",
+    category: "Web Development",
+    tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+    githubUrl: "https://github.com/faizan-523",
+    liveUrl: "https://example.com",
+  },
+  {
+    id: "matchpoint-sports",
+    title: "MatchPoint Sports",
+    description:
+      "Sports news platform with an admin dashboard and content management features.",
+    category: "Web Development",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/faizan-523",
+    liveUrl: "https://example.com",
+  },
+  {
+    id: "student-performance-analysis",
+    title: "Student Performance Analysis",
+    description:
+      "Data analysis project exploring student performance data through cleaning, analysis, and visualization.",
     category: "Data Science",
     tags: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/faizan-523",
     liveUrl: "https://example.com",
   },
   {
-    id: "housing-price-predictor",
-    title: "Housing Price Prediction Model",
+    id: "linear-regression-prediction",
+    title: "Linear Regression Prediction",
     description:
-      "Supervised machine learning model comparing regression techniques and decision trees to estimate property market valuations.",
+      "Machine learning project using linear regression to predict house prices from area data.",
     category: "Machine Learning",
-    tags: ["Python", "Scikit-learn", "Decision Trees", "Linear Regression"],
-    githubUrl: "https://github.com",
+    tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
+    githubUrl: "https://github.com/faizan-523",
     liveUrl: "https://example.com",
   },
 ];

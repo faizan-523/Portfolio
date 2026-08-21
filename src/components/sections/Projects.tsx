@@ -60,7 +60,7 @@ export function Projects() {
       : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="scroll-mt-16 border-t border-zinc-800/60 py-20 md:py-28">
+    <section id="projects" className="scroll-mt-20 border-t border-zinc-800/60 py-20 md:py-28">
       <Container className="space-y-12">
         {/* Section Header */}
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
