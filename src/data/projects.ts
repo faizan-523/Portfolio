@@ -12,14 +12,14 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://furniture-lux.vercel.app/",
   },
   {
-    id: "sports-news",
-    title: "Sports News",
+    id: "workforge",
+    title: "WorkForge",
     description:
-      "Sports news platform with an admin dashboard and content management features.",
+      "Full-stack freelance marketplace platform featuring job postings, proposals, contracts, client-freelancer collaboration, and secure authentication.",
     category: "Web Development",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/faizan-523/sports-news",
-    liveUrl: "https://sports-news-beta.vercel.app/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "NextAuth"],
+    githubUrl: "https://github.com/faizan-523/WorkForge",
+    liveUrl: "https://work-forge-seven.vercel.app/",
   },
   {
     id: "chronicle-blog",
