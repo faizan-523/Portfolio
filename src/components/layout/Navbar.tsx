@@ -130,27 +130,28 @@ export function Navbar() {
       </Container>
 
       {/* Mobile Navigation Drawer */}
-      {isOpen && (
-        <div
-          id="mobile-menu"
-          className="border-b border-zinc-800/80 bg-zinc-950/95 backdrop-blur-lg md:hidden"
-        >
-          <Container className="py-4">
-            <nav className="flex flex-col space-y-1">
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="rounded-lg px-3 py-3 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </Container>
-        </div>
-      )}
+      <div
+        id="mobile-menu"
+        aria-hidden={!isOpen}
+        className={`border-b border-zinc-800/80 bg-zinc-950/95 backdrop-blur-lg md:hidden ${
+          isOpen ? "block" : "hidden"
+        }`}
+      >
+        <Container className="py-4">
+          <nav className="flex flex-col space-y-1">
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="rounded-lg px-3 py-3 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </Container>
+      </div>
     </header>
   );
 }

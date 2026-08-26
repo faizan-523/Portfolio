@@ -4,14 +4,57 @@ import React, { useState } from "react";
 import { Container } from "@/components/layout/Container";
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [submitted, setSubmitted] = useState(false);
+
+  const validate = () => {
+    const newErrors: { [key: string]: string } = {};
+    if (!formData.name.trim()) {
+      newErrors.name = "Please enter your name.";
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = "Please enter your email address.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = "Please write a message.";
+    }
+    return newErrors;
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => {
+        const updated = { ...prev };
+        delete updated[name];
+        return updated;
+      });
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setErrors({});
     setSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
     setTimeout(() => {
       setSubmitted(false);
-    }, 4000);
+    }, 5000);
   };
 
   return (
@@ -105,7 +148,7 @@ export function Contact() {
           {/* Right Column: Contact Form UI */}
           <div className="lg:col-span-7">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 md:p-8 backdrop-blur-sm">
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} noValidate className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {/* Name Input */}
                   <div className="space-y-2">
@@ -117,9 +160,22 @@ export function Contact() {
                       id="name"
                       name="name"
                       required
+                      value={formData.name}
+                      onChange={handleChange}
+                      aria-invalid={errors.name ? "true" : "false"}
+                      aria-describedby={errors.name ? "name-error" : undefined}
                       placeholder="Your name"
-                      className="w-full rounded-lg border border-zinc-800 bg-zinc-900/80 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 transition-colors focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                      className={`w-full rounded-lg border bg-zinc-900/80 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 transition-colors focus:outline-none focus:ring-1 ${
+                        errors.name
+                          ? "border-rose-500/80 focus:border-rose-500 focus:ring-rose-500"
+                          : "border-zinc-800 focus:border-sky-500 focus:ring-sky-500"
+                      }`}
                     />
+                    {errors.name && (
+                      <p id="name-error" role="alert" className="text-xs text-rose-400">
+                        {errors.name}
+                      </p>
+                    )}
                   </div>
 
                   {/* Email Input */}
@@ -132,9 +188,22 @@ export function Contact() {
                       id="email"
                       name="email"
                       required
+                      value={formData.email}
+                      onChange={handleChange}
+                      aria-invalid={errors.email ? "true" : "false"}
+                      aria-describedby={errors.email ? "email-error" : undefined}
                       placeholder="your.email@example.com"
-                      className="w-full rounded-lg border border-zinc-800 bg-zinc-900/80 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 transition-colors focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                      className={`w-full rounded-lg border bg-zinc-900/80 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 transition-colors focus:outline-none focus:ring-1 ${
+                        errors.email
+                          ? "border-rose-500/80 focus:border-rose-500 focus:ring-rose-500"
+                          : "border-zinc-800 focus:border-sky-500 focus:ring-sky-500"
+                      }`}
                     />
+                    {errors.email && (
+                      <p id="email-error" role="alert" className="text-xs text-rose-400">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -148,17 +217,32 @@ export function Contact() {
                     name="message"
                     rows={4}
                     required
+                    value={formData.message}
+                    onChange={handleChange}
+                    aria-invalid={errors.message ? "true" : "false"}
+                    aria-describedby={errors.message ? "message-error" : undefined}
                     placeholder="Write your message here..."
-                    className="w-full resize-none rounded-lg border border-zinc-800 bg-zinc-900/80 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 transition-colors focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                    className={`w-full resize-none rounded-lg border bg-zinc-900/80 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 transition-colors focus:outline-none focus:ring-1 ${
+                      errors.message
+                        ? "border-rose-500/80 focus:border-rose-500 focus:ring-rose-500"
+                        : "border-zinc-800 focus:border-sky-500 focus:ring-sky-500"
+                    }`}
                   />
+                  {errors.message && (
+                    <p id="message-error" role="alert" className="text-xs text-rose-400">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
-                {/* Submit Feedback Notification */}
-                {submitted && (
-                  <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/10 p-3 text-center text-xs font-medium text-emerald-400">
-                    Thank you! Your message has been received.
-                  </div>
-                )}
+                {/* Submit Feedback Notification (Live Region) */}
+                <div aria-live="polite" role="status">
+                  {submitted && (
+                    <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/10 p-3 text-center text-xs font-medium text-emerald-400">
+                      Thank you! Your message has been received.
+                    </div>
+                  )}
+                </div>
 
                 {/* Send Button */}
                 <button
@@ -175,3 +259,4 @@ export function Contact() {
     </section>
   );
 }
+

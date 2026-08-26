@@ -16,17 +16,26 @@ const geistMono = Geist_Mono({
 
 export const viewport: Viewport = {
   themeColor: "#09090b",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };
 
+const siteUrl = "https://faizan-portfolio-235.vercel.app";
+const title = "Muhammad Faizan | Web Developer & Data Science Enthusiast";
+const description =
+  "Muhammad Faizan - Web Developer & Data Science Enthusiast building modern full-stack apps. Explore my projects and contact me to collaborate on your next idea.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Muhammad Faizan | Digital Space",
+    default: title,
     template: "%s | Muhammad Faizan",
   },
-  description:
-    "Portfolio of Muhammad Faizan, a Computer Science student and developer specializing in modern web development, full-stack applications, data analysis, and machine learning.",
+  description,
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Muhammad Faizan",
     "Faizan",
@@ -39,22 +48,29 @@ export const metadata: Metadata = {
     "Python",
     "Portfolio",
   ],
-  authors: [{ name: "Muhammad Faizan" }],
+  authors: [{ name: "Muhammad Faizan", url: "https://github.com/faizan-523" }],
   creator: "Muhammad Faizan",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://github.com/faizan-523",
-    title: "Muhammad Faizan | Web Developer & Data Science Enthusiast",
-    description:
-      "Explore web development projects, data science analyses, and machine learning models built by Muhammad Faizan.",
+    url: siteUrl,
+    title,
+    description,
     siteName: "Muhammad Faizan Portfolio",
+    images: [
+      {
+        url: "/icon.svg",
+        width: 512,
+        height: 512,
+        alt: "Muhammad Faizan Portfolio",
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Muhammad Faizan | Web Developer & Data Science Enthusiast",
-    description:
-      "Explore web development projects, data science analyses, and machine learning models built by Muhammad Faizan.",
+    card: "summary",
+    title,
+    description,
+    images: ["/icon.svg"],
   },
   robots: {
     index: true,
@@ -63,6 +79,51 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Muhammad Faizan",
+      url: siteUrl,
+      jobTitle: "Web Developer",
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "Institute of Space Technology",
+      },
+      sameAs: [
+        "https://github.com/faizan-523",
+        "https://www.linkedin.com/in/faizan523/",
+      ],
+      knowsAbout: [
+        "Web Development",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Python",
+        "Data Science",
+        "Machine Learning",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Muhammad Faizan Portfolio",
+      description,
+      author: {
+        "@id": `${siteUrl}/#person`,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -75,11 +136,27 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground">
+        {/* Skip to Main Content Link for Keyboard Accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:border focus:border-sky-400 focus:bg-zinc-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
   );
 }
+
