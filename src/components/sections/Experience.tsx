@@ -5,7 +5,7 @@ interface ExperienceItem {
   role: string;
   company: string;
   period: string;
-  description: string;
+  responsibilities: string[];
   technologies: string[];
 }
 
@@ -15,9 +15,12 @@ const EXPERIENCES: ExperienceItem[] = [
     role: "Web Development Intern",
     company: "Softezm",
     period: "May 2026 – August 2026",
-    description:
-      "Contributed to web development projects utilizing modern web technologies, building clean user interfaces, and collaborating on responsive web solutions.",
-    technologies: ["Web Development", "JavaScript", "React", "HTML/CSS", "Git"],
+    responsibilities: [
+      "Developed and maintained modern, responsive web application interfaces using React, JavaScript, HTML5, and CSS3.",
+      "Built clean, modular, and reusable frontend components ensuring cross-browser compatibility and responsive layouts.",
+      "Collaborated on feature development, testing, and maintained code workflows using Git and GitHub.",
+    ],
+    technologies: ["JavaScript", "React", "HTML5", "CSS3", "Git", "Web Development"],
   },
 ];
 
@@ -66,11 +69,17 @@ export function Experience() {
                   </span>
                 </div>
 
-                <p className="mt-4 text-sm leading-relaxed text-zinc-400">
-                  {exp.description}
-                </p>
+                {/* Professional Bullet Points */}
+                <ul className="mt-4 space-y-2 text-sm text-zinc-400">
+                  {exp.responsibilities.map((resp, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400/80" />
+                      <span className="leading-relaxed">{resp}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                <div className="mt-4 flex flex-wrap gap-1.5">
+                <div className="mt-5 flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800/80">
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -88,3 +97,4 @@ export function Experience() {
     </section>
   );
 }
+

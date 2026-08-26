@@ -8,6 +8,7 @@ import { NavItem } from "@/types";
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },

@@ -9,9 +9,9 @@ interface SkillCategory {
 
 const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: "Web Development",
-    description: "Building responsive, modern, and high-performance web applications.",
-    skills: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js"],
+    title: "Frontend",
+    description: "Responsive user interfaces, component architecture, and modern styling.",
+    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
     icon: (props) => (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -24,8 +24,38 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     ),
   },
   {
+    title: "Backend",
+    description: "Server runtime, API logic, ORM data mapping, and secure authentication.",
+    skills: ["Node.js", "NextAuth", "Prisma", "Mongoose"],
+    icon: (props) => (
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Databases",
+    description: "Relational and document databases, schema modeling, and querying.",
+    skills: ["PostgreSQL", "MongoDB", "SQL"],
+    icon: (props) => (
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+        />
+      </svg>
+    ),
+  },
+  {
     title: "Data Science",
-    description: "Data exploration, numerical computing, and visualization.",
+    description: "Data exploration, numerical analysis, transformation, and visualization.",
     skills: ["Python", "NumPy", "Pandas", "Matplotlib", "Seaborn"],
     icon: (props) => (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
@@ -39,23 +69,8 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     ),
   },
   {
-    title: "Databases",
-    description: "Designing, querying, and managing relational and NoSQL databases.",
-    skills: ["MongoDB", "PostgreSQL", "SQL"],
-    icon: (props) => (
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-        />
-      </svg>
-    ),
-  },
-  {
     title: "Machine Learning",
-    description: "Developing statistical models and predictive algorithms.",
+    description: "Statistical modeling, predictive algorithms, and regression analysis.",
     skills: [
       "Scikit-learn",
       "Linear Regression",
@@ -74,8 +89,8 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     ),
   },
   {
-    title: "Tools & Workflow",
-    description: "Version control, development environments, and team collaboration.",
+    title: "Tools",
+    description: "Version control systems, code hosting platforms, and development environments.",
     skills: ["Git", "GitHub", "VS Code"],
     icon: (props) => (
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
@@ -109,7 +124,7 @@ export function Skills() {
             Skills &amp; Technologies
           </h2>
           <p className="max-w-2xl text-base text-zinc-400 sm:text-lg">
-            Core technologies and tools I utilize across web development and data science projects.
+            Core technologies and tools organized across development, data science, and workflows.
           </p>
         </div>
 
@@ -134,12 +149,12 @@ export function Skills() {
                     </div>
                   </div>
 
-                  <p className="text-xs text-zinc-400">
+                  <p className="text-xs text-zinc-400 leading-relaxed">
                     {category.description}
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-6">
+                <div className="flex flex-wrap gap-1.5 pt-6 border-t border-zinc-800/80 mt-4">
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
@@ -157,3 +172,4 @@ export function Skills() {
     </section>
   );
 }
+

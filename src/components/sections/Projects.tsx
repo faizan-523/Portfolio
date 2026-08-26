@@ -103,46 +103,79 @@ export function Projects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col justify-between rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 backdrop-blur-sm transition-colors hover:border-zinc-700"
+              className={`flex flex-col justify-between rounded-xl border bg-zinc-900/40 p-6 backdrop-blur-sm transition-all hover:border-zinc-700 ${
+                project.featured
+                  ? "border-sky-500/40 shadow-sm shadow-sky-500/5 relative"
+                  : "border-zinc-800"
+              }`}
             >
-              <div className="space-y-4">
-                {/* Project Image Placeholder */}
-                <ProjectPlaceholderImage
-                  category={project.category}
-                  title={project.title}
-                />
+              <div className="space-y-5">
+                {/* Project Header / Top Row */}
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-xs uppercase tracking-wider text-sky-400">
+                    {project.category}
+                  </span>
+                  {project.featured && (
+                    <span className="inline-flex items-center gap-1 rounded-full border border-sky-400/30 bg-sky-400/10 px-2.5 py-0.5 text-[11px] font-semibold text-sky-300">
+                      <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+                      Featured
+                    </span>
+                  )}
+                </div>
 
-                {/* Project Info */}
+                {/* Project Title & Goal */}
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-zinc-100">
+                  <h3 className="text-xl font-bold tracking-tight text-zinc-100">
                     {project.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400">
-                    {project.description}
+                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">
+                    {project.goal}
                   </p>
                 </div>
 
-                {/* Tech Stack Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-md border border-zinc-800 bg-zinc-900/80 px-2 py-0.5 text-xs font-medium text-zinc-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {/* Key Features */}
+                {project.keyFeatures && project.keyFeatures.length > 0 && (
+                  <div className="space-y-2 pt-1 border-t border-zinc-800/80">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                      Key Highlights
+                    </p>
+                    <ul className="space-y-1.5 text-xs text-zinc-400">
+                      {project.keyFeatures.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400/80" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Tech Stack */}
+                <div className="space-y-2 pt-1 border-t border-zinc-800/80">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                    Tech Stack
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md border border-zinc-800 bg-zinc-900/90 px-2 py-0.5 text-xs font-medium text-zinc-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-3 pt-6">
+              <div className="flex items-center gap-3 pt-6 border-t border-zinc-800/80 mt-6">
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${project.title} GitHub repository`}
-                  className="inline-flex h-9 flex-1 items-center justify-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/80 px-3 text-xs font-medium text-zinc-300 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+                  className="inline-flex h-9 flex-1 items-center justify-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/80 px-3 text-xs font-medium text-zinc-300 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
                 >
                   <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -160,7 +193,7 @@ export function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${project.title} Live Preview`}
-                    className="inline-flex h-9 flex-1 items-center justify-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/80 px-3 text-xs font-medium text-zinc-300 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+                    className="inline-flex h-9 flex-1 items-center justify-center gap-2 rounded-lg border border-sky-500/30 bg-sky-500/10 px-3 text-xs font-medium text-sky-300 transition-colors hover:border-sky-400 hover:bg-sky-500/20 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
                   >
                     <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -176,3 +209,4 @@ export function Projects() {
     </section>
   );
 }
+

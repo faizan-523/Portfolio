@@ -41,11 +41,23 @@ export function About() {
           {/* Sidebar: Education & Currently Learning */}
           <div className="space-y-6 lg:col-span-5">
             {/* Education Card */}
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-sm transition-colors hover:border-zinc-700">
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 text-sky-400">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-sm transition-all hover:border-zinc-700">
+              <div className="flex items-center justify-between gap-2 pb-4 border-b border-zinc-800/80">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-2 w-2 rounded-full bg-sky-400" />
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
+                    Education
+                  </h3>
+                </div>
+                <span className="inline-flex rounded-full border border-sky-400/20 bg-sky-400/10 px-2.5 py-0.5 text-xs font-medium text-sky-400">
+                  2024 &ndash; Present
+                </span>
+              </div>
+
+              <div className="mt-4 flex items-start gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 text-sky-400">
                   <svg
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -59,12 +71,13 @@ export function About() {
                     />
                   </svg>
                 </div>
-                <div className="space-y-1">
-                  <h3 className="text-base font-semibold text-zinc-100">
+                <div className="space-y-1 min-w-0 flex-1">
+                  <h4 className="text-base font-semibold text-zinc-100 tracking-tight">
                     BS in Computer Science
-                  </h3>
-                  <p className="text-sm text-zinc-400">Institute of Space Technology</p>
-                  <p className="pt-2 text-xs text-zinc-500">2024 &ndash; Present</p>
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-medium">
+                    Institute of Space Technology
+                  </p>
                 </div>
               </div>
             </div>

@@ -20,10 +20,14 @@ export type ProjectCategory =
 export interface Project {
   id: string;
   title: string;
+  goal: string;
+  keyFeatures: string[];
   description: string;
   category: "Web Development" | "Data Science" | "Machine Learning";
   tags: string[];
   githubUrl: string;
   liveUrl?: string;
   imageUrl?: string;
+  featured?: boolean;
 }
+
