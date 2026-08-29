@@ -25,15 +25,13 @@ export function Hero() {
         {/* Headline & Intro */}
         <div className="max-w-3xl space-y-4">
           <h1 className="text-4xl font-extrabold tracking-tight text-zinc-100 sm:text-5xl md:text-6xl lg:text-7xl">
-            Web Developer &amp;{" "}
+            Full-Stack Developer{" "}
             <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
-              Data Science Enthusiast
+              Building Modern Web Applications
             </span>
           </h1>
           <p className="max-w-2xl text-base text-zinc-400 sm:text-lg md:text-xl">
-            Hi, I&apos;m Muhammad Faizan — a passionate Computer Science student who loves building,
-            learning, and exploring technology. I&apos;m always looking for new challenges and
-            opportunities to turn ideas into meaningful digital experiences.
+            I build responsive and scalable web applications using Next.js, React, Node.js, PostgreSQL and MongoDB.
           </p>
         </div>
 
@@ -48,12 +46,27 @@ export function Hero() {
           </Link>
 
           {/* Secondary Action */}
-          <Link
-            href="#contact"
-            className="inline-flex h-11 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/60 px-5 text-sm font-semibold text-zinc-200 transition-colors hover:border-zinc-700 hover:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+          <a
+            href="/resume.pdf"
+            download
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/60 px-5 text-sm font-semibold text-zinc-200 transition-colors hover:border-zinc-700 hover:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
           >
-            Contact Me
-          </Link>
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+              />
+            </svg>
+            <span>Download Resume</span>
+          </a>
 
           {/* Social Links Divider */}
           <div className="hidden h-6 w-px bg-zinc-800 sm:block" aria-hidden="true" />
