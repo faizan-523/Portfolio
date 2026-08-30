@@ -16,6 +16,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "NextAuth"],
     githubUrl: "https://github.com/faizan-523/WorkForge",
     liveUrl: "https://work-forge-seven.vercel.app/",
+    imageUrl: "/images/projects/workforge.jpg",
     featured: true,
   },
   {
@@ -33,6 +34,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "React", "Tailwind CSS", "MongoDB", "Mongoose", "NextAuth"],
     githubUrl: "https://github.com/faizan-523/Furniture-lux",
     liveUrl: "https://furniture-lux.vercel.app/",
+    imageUrl: "/images/projects/furniturelux.jpg",
   },
   {
     id: "chronicle-blog",
@@ -48,6 +50,7 @@ export const PROJECTS: Project[] = [
     category: "Web Development",
     tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
     githubUrl: "https://github.com/faizan-523/Chronicle-Blog",
+    imageUrl: "/images/projects/chronicle-blog.jpg",
   },
 ];
 

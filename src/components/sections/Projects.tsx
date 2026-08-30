@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Project, ProjectCategory } from "@/types";
 import { PROJECTS } from "@/data/projects";
@@ -101,41 +102,67 @@ export function Projects() {
         {/* Project Grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
-            <div
+            <article
               key={project.id}
-              className={`flex flex-col justify-between rounded-xl border bg-zinc-900/40 p-6 backdrop-blur-sm transition-all hover:border-zinc-700 ${
+              className={`group relative flex flex-col justify-between overflow-hidden rounded-xl border p-6 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 ${
                 project.featured
-                  ? "border-sky-500/40 shadow-sm shadow-sky-500/5 relative"
-                  : "border-zinc-800"
+                  ? "border-sky-500/40 bg-zinc-900/60 shadow-lg shadow-sky-500/5 ring-1 ring-sky-500/20 hover:border-sky-400/60"
+                  : "border-zinc-800 bg-zinc-900/40 hover:border-zinc-700"
               }`}
             >
+              {/* Featured Project accent bar */}
+              {project.featured && (
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -top-px left-1/2 -translate-x-1/2 h-px w-3/4 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-80"
+                />
+              )}
+
               <div className="space-y-5">
-                {/* Project Header / Top Row */}
+                {/* Project Visual Preview */}
+                {project.imageUrl ? (
+                  <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950">
+                    <Image
+                      src={project.imageUrl}
+                      alt={`${project.title} cover`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                      priority={project.featured}
+                    />
+                  </div>
+                ) : (
+                  <ProjectPlaceholderImage category={project.category} title={project.title} />
+                )}
+
+                {/* Category & Featured Badge Header */}
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-xs uppercase tracking-wider text-sky-400">
+                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-sky-400">
                     {project.category}
                   </span>
                   {project.featured && (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-sky-400/30 bg-sky-400/10 px-2.5 py-0.5 text-[11px] font-semibold text-sky-300">
-                      <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-                      Featured
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-400/30 bg-sky-400/10 px-2.5 py-0.5 text-xs font-semibold text-sky-300 shadow-sm shadow-sky-500/10">
+                      <svg className="h-3 w-3 text-sky-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      Featured Project
                     </span>
                   )}
                 </div>
 
-                {/* Project Title & Goal */}
+                {/* Project Title & Description */}
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold tracking-tight text-zinc-100">
+                  <h3 className="text-xl font-bold tracking-tight text-zinc-100 group-hover:text-white">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-zinc-300 font-medium leading-relaxed">
-                    {project.goal}
+                  <p className="text-sm leading-relaxed text-zinc-400">
+                    {project.description}
                   </p>
                 </div>
 
-                {/* Key Features */}
+                {/* Key Highlights */}
                 {project.keyFeatures && project.keyFeatures.length > 0 && (
-                  <div className="space-y-2 pt-1 border-t border-zinc-800/80">
+                  <div className="space-y-2 pt-2 border-t border-zinc-800/80">
                     <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
                       Key Highlights
                     </p>
@@ -151,7 +178,7 @@ export function Projects() {
                 )}
 
                 {/* Tech Stack */}
-                <div className="space-y-2 pt-1 border-t border-zinc-800/80">
+                <div className="space-y-2 pt-2 border-t border-zinc-800/80">
                   <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
                     Tech Stack
                   </p>
@@ -169,7 +196,7 @@ export function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-3 pt-6 border-t border-zinc-800/80 mt-6">
+              <div className="flex items-center gap-3 pt-5 border-t border-zinc-800/80 mt-6">
                 <a
                   href={project.githubUrl}
                   target="_blank"
@@ -184,7 +211,7 @@ export function Projects() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>Code</span>
+                  <span>GitHub</span>
                 </a>
 
                 {project.liveUrl && (
@@ -192,17 +219,17 @@ export function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${project.title} Live Preview`}
+                    aria-label={`${project.title} Live Demo`}
                     className="inline-flex h-9 flex-1 items-center justify-center gap-2 rounded-lg border border-sky-500/30 bg-sky-500/10 px-3 text-xs font-medium text-sky-300 transition-colors hover:border-sky-400 hover:bg-sky-500/20 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
                   >
-                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                     </svg>
                     <span>Live Demo</span>
                   </a>
                 )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </Container>
