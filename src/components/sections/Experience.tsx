@@ -16,11 +16,12 @@ const EXPERIENCES: ExperienceItem[] = [
     company: "Softezm",
     period: "May 2026 – August 2026",
     responsibilities: [
-      "Developed and maintained modern, responsive web application interfaces using React, JavaScript, HTML5, and CSS3.",
-      "Built clean, modular, and reusable frontend components ensuring cross-browser compatibility and responsive layouts.",
-      "Collaborated on feature development, testing, and maintained code workflows using Git and GitHub.",
+      "Engineered responsive and dynamic web interfaces using React, JavaScript (ES6+), HTML5, and CSS3.",
+      "Developed modular, reusable UI components ensuring cross-browser compatibility and seamless responsive layouts.",
+      "Collaborated on web development projects, contributing to feature implementation, testing, and debugging.",
+      "Maintained clean code standards and managed version control workflows using Git and GitHub.",
     ],
-    technologies: ["JavaScript", "React", "HTML5", "CSS3", "Git", "Web Development"],
+    technologies: ["React", "JavaScript", "HTML5", "CSS3", "Git", "GitHub", "Responsive Design"],
   },
 ];
 
@@ -57,24 +58,24 @@ export function Experience() {
               <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-sm transition-colors hover:border-zinc-700">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold text-zinc-100">
+                    <h3 className="text-lg font-bold tracking-tight text-zinc-100">
                       {exp.role}
                     </h3>
-                    <p className="text-sm font-medium text-sky-400">
+                    <p className="text-sm font-semibold text-sky-400">
                       {exp.company}
                     </p>
                   </div>
-                  <span className="inline-flex w-fit rounded-full border border-zinc-800 bg-zinc-900/80 px-3 py-1 text-xs font-medium text-zinc-400">
+                  <span className="inline-flex w-fit rounded-full border border-zinc-800 bg-zinc-900/80 px-3 py-1 font-mono text-xs font-medium text-zinc-400">
                     {exp.period}
                   </span>
                 </div>
 
                 {/* Professional Bullet Points */}
-                <ul className="mt-4 space-y-2 text-sm text-zinc-400">
+                <ul className="mt-4 space-y-2.5 text-sm text-zinc-300">
                   {exp.responsibilities.map((resp, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400/80" />
-                      <span className="leading-relaxed">{resp}</span>
+                      <span className="leading-relaxed text-zinc-300">{resp}</span>
                     </li>
                   ))}
                 </ul>
@@ -83,7 +84,7 @@ export function Experience() {
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md border border-zinc-800 bg-zinc-900/80 px-2 py-0.5 text-xs font-medium text-zinc-300"
+                      className="rounded-md border border-zinc-800 bg-zinc-900/80 px-2.5 py-0.5 text-xs font-medium text-zinc-300"
                     >
                       {tech}
                     </span>
