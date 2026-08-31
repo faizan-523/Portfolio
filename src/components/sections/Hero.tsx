@@ -74,28 +74,7 @@ export function Hero() {
             <span>View Resume</span>
           </a>
 
-          {/* Download Resume */}
-          <a
-            href="/resume/Faizan_Resume.pdf"
-            download="Faizan_Resume.pdf"
-            className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/60 px-5 text-sm font-semibold text-zinc-200 transition-colors hover:border-zinc-700 hover:bg-zinc-800 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
-          >
-            <svg
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-              />
-            </svg>
-            <span>Download Resume</span>
-          </a>
+
 
           {/* Social Links Divider */}
           <div className="hidden h-6 w-px bg-zinc-800 sm:block" aria-hidden="true" />
