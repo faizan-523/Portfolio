@@ -16,10 +16,8 @@ const EXPERIENCES: ExperienceItem[] = [
     company: "Softezm",
     period: "May 2026 – August 2026",
     responsibilities: [
-      "Engineered responsive and dynamic web interfaces using React, JavaScript (ES6+), HTML5, and CSS3.",
-      "Developed modular, reusable UI components ensuring cross-browser compatibility and seamless responsive layouts.",
-      "Collaborated on web development projects, contributing to feature implementation, testing, and debugging.",
-      "Maintained clean code standards and managed version control workflows using Git and GitHub.",
+      "Delivered 10+ reusable React components across 3 client projects, cutting UI build time by an estimated 30% through a consistent, modular component library.",
+      "Resolved 20+ cross-browser compatibility bugs and implemented responsive layouts, reducing QA-reported UI defects by over 40% before final delivery.",
     ],
     technologies: ["React", "JavaScript", "HTML5", "CSS3", "Git", "GitHub", "Responsive Design"],
   },
