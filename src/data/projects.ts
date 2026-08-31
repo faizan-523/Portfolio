@@ -2,6 +2,24 @@ import { Project } from "@/types";
 
 export const PROJECTS: Project[] = [
   {
+    id: "sales-analysis-system",
+    title: "Sales Analysis System",
+    goal: "Deliver real-time sales performance, revenue analytics, and product insights through interactive data visualization.",
+    keyFeatures: [
+      "Interactive sales performance & revenue trend analytics",
+      "Product metrics and category-level insights",
+      "Modern full-stack dashboard powered by Next.js & Recharts",
+    ],
+    description:
+      "An interactive full-stack sales analytics dashboard that visualizes sales performance, revenue trends, product insights, and key business metrics using a modern and responsive interface.",
+    category: "Web Development",
+    tags: ["Next.js", "TypeScript", "MongoDB", "Mongoose", "Tailwind CSS", "Recharts"],
+    githubUrl: "https://github.com/faizan-523/Sales-Analysis-System",
+    liveUrl: "https://apexpulse-sales-analytics.vercel.app/",
+    imageUrl: "/images/projects/sales-analysis.jpg",
+    featured: true,
+  },
+  {
     id: "workforge",
     title: "WorkForge",
     goal: "Connect clients and freelancers through a full-featured online talent marketplace.",
@@ -17,7 +35,6 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/faizan-523/WorkForge",
     liveUrl: "https://work-forge-seven.vercel.app/",
     imageUrl: "/images/projects/workforge.jpg",
-    featured: true,
   },
   {
     id: "furniturelux",
