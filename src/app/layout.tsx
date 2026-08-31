@@ -22,9 +22,9 @@ export const viewport: Viewport = {
 };
 
 const siteUrl = "https://faizan-portfolio-235.vercel.app";
-const title = "Muhammad Faizan | Web Developer & Data Science Enthusiast";
+const title = "Muhammad Faizan | Web Developer & Full-Stack Developer";
 const description =
-  "Muhammad Faizan - Web Developer & Data Science Enthusiast building modern full-stack apps. Explore my projects and contact me to collaborate on your next idea.";
+  "Muhammad Faizan - Web Developer & Full-Stack Developer building modern full-stack apps. Explore my projects and contact me to collaborate on your next idea.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

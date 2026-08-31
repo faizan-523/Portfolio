@@ -1,10 +1,10 @@
 import { Container } from "@/components/layout/Container";
 
-const LEARNING_TOPICS = [
+const CORE_COMPETENCIES = [
+  "Full-Stack Web Development",
   "Deep Learning & Neural Networks",
-  "Full-Stack Next.js & React",
   "Machine Learning Pipelines",
-  "Data Visualization",
+  "Data Visualization & Analytics",
   "Cloud Deployment & Docker",
 ];
 
@@ -38,7 +38,7 @@ export function About() {
             </p>
           </div>
 
-          {/* Sidebar: Education & Currently Learning */}
+          {/* Sidebar: Education & Core Competencies */}
           <div className="space-y-6 lg:col-span-5">
             {/* Education Card */}
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-sm transition-all hover:border-zinc-700">
@@ -82,22 +82,22 @@ export function About() {
               </div>
             </div>
 
-            {/* Currently Learning Area */}
+            {/* Core Competencies Area */}
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-sm transition-colors hover:border-zinc-700">
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <span className="flex h-2 w-2 rounded-full bg-sky-400" />
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-200">
-                    Currently Exploring
+                    Core Competencies
                   </h3>
                 </div>
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {LEARNING_TOPICS.map((topic) => (
+                  {CORE_COMPETENCIES.map((skill) => (
                     <span
-                      key={topic}
+                      key={skill}
                       className="rounded-md border border-zinc-800 bg-zinc-900/80 px-2.5 py-1 text-xs font-medium text-zinc-300"
                     >
-                      {topic}
+                      {skill}
                     </span>
                   ))}
                 </div>

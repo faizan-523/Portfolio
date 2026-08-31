@@ -214,7 +214,7 @@ export function Projects() {
                   <span>GitHub</span>
                 </a>
 
-                {project.liveUrl && (
+                {project.liveUrl ? (
                   <a
                     href={project.liveUrl}
                     target="_blank"
@@ -227,7 +227,19 @@ export function Projects() {
                     </svg>
                     <span>Live Demo</span>
                   </a>
-                )}
+                ) : project.id === "chronicle-blog" ? (
+                  <button
+                    type="button"
+                    disabled
+                    aria-disabled="true"
+                    className="inline-flex h-9 flex-1 cursor-not-allowed items-center justify-center gap-1.5 rounded-lg border border-zinc-800/60 bg-zinc-900/30 px-2.5 text-xs font-medium text-zinc-400 opacity-60"
+                  >
+                    <svg className="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                    <span className="truncate">Live Demo Coming Soon</span>
+                  </button>
+                ) : null}
               </div>
             </article>
           ))}
