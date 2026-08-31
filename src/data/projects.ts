@@ -9,6 +9,7 @@ export const PROJECTS: Project[] = [
       "Interactive sales performance & revenue trend analytics",
       "Product metrics and category-level insights",
       "Modern full-stack dashboard powered by Next.js & Recharts",
+      "Aggregates & visualizes data across 5+ KPI metric categories in real time",
     ],
     description:
       "An interactive full-stack sales analytics dashboard that visualizes sales performance, revenue trends, product insights, and key business metrics using a modern and responsive interface.",
@@ -27,6 +28,7 @@ export const PROJECTS: Project[] = [
       "Job postings and proposal submission workflow",
       "Client-freelancer contract management & collaboration",
       "Secure authentication powered by NextAuth",
+      "End-to-end workflow spanning 4 stages: post → propose → contract → complete",
     ],
     description:
       "Full-stack freelance marketplace platform featuring job postings, proposals, contracts, client-freelancer collaboration, and secure authentication.",
@@ -44,6 +46,7 @@ export const PROJECTS: Project[] = [
       "Product catalog and category management",
       "Interactive cart functionality and responsive checkout layout",
       "User authentication and database integration with MongoDB",
+      "Supports multi-category product listings with persistent cart across sessions",
     ],
     description:
       "Full-stack furniture e-commerce platform with authentication, product management, cart functionality, and a modern responsive UI.",
@@ -61,6 +64,7 @@ export const PROJECTS: Project[] = [
       "Admin dashboard for full post creation and management",
       "User authentication and profile management",
       "Interactive post commenting and discussion features",
+      "Dual-role system (Admin & Reader) with full CRUD across posts, users & comments",
     ],
     description:
       "Full-stack blog platform with an admin dashboard, authentication, post management, and comments.",
